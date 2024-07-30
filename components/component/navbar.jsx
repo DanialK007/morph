@@ -24,9 +24,9 @@ export default function MyNavbar() {
 
   return (
     <Navbar 
-      className={`pt-3 pb-2 border-b border-primary-foreground/40 text-primary-foreground px-5 lg:px-20 fixed z-10 flex justify-between top-0 left-0 w-full transition-all duration-300 ${isScrolled ? 'bg-primary-foreground text-secondary font-semibold' : 'bg-transparent'}`}
+      className={`pt-3 pb-2 border-b border-primary-foreground/40 text-primary-foreground px-5 lg:px-20 fixed z-50 flex justify-between top-0 left-0 w-full transition-all duration-300 ${isScrolled ? 'bg-primary-foreground text-secondary font-semibold' : 'bg-transparent'}`}
     >
-      <NavbarContent className="flex gap-4 pe-5">
+      <NavbarContent className="flex gap-4">
         <NavbarItem>
           <Link color="foreground" className="lg:hidden hover:text-primary font-semibol" href="#">
             <img alt="" src="logo.png" className={`h-14 w-16 pt-2 object-cover rounded-lg duration-300 ${isScrolled ?  "invert" : "invert-0"}`}/>
@@ -71,7 +71,7 @@ export default function MyNavbar() {
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" className="hover:text-primary font-semibol" href="#">
-            Resourse
+            Portfolio
           </Link>
         </NavbarItem>
         <NavbarItem>

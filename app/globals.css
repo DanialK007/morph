@@ -9,7 +9,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 
 /* Track */
@@ -20,6 +20,33 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #a45923;
+  cursor: grab;
+}
+
+::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
+}
+
+.loading{
+  opacity: 0;
+  z-index: -9;
+  animation: loading 5s ease-in-out;
+}
+
+@keyframes loading {
+  0%, 90% { z-index: 99;opacity: 1;}
+  100% { z-index: 99;opacity: 0; }
+}
+
+.loadingIcon{
+  opacity: 0;
+  z-index: -9;
+  animation: loadingIcon 2s infinite;
+}
+
+@keyframes loadingIcon {
+  0%, 100% {opacity: 0;}
+  50% {opacity: 1}
 }
 
 @layer base {
