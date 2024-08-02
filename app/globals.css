@@ -30,23 +30,42 @@
 .loading{
   opacity: 0;
   z-index: -9;
-  animation: loading 5s ease-in-out;
+  animation: loading 2s ease-in-out;
 }
 
 @keyframes loading {
-  0%, 90% { z-index: 99;opacity: 1;}
+  0%, 80% { z-index: 99;opacity: 1;}
   100% { z-index: 99;opacity: 0; }
 }
 
 .loadingIcon{
   opacity: 0;
   z-index: -9;
-  animation: loadingIcon 2s infinite;
+  animation: loadingIcon 2s;
 }
 
 @keyframes loadingIcon {
   0%, 100% {opacity: 0;}
-  50% {opacity: 1}
+  40%, 60% {opacity: 1}
+}
+
+.heroUp{
+  animation: heroUp 3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes heroUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.lighter{
+  filter: brightness(50%);
+  animation: lighter 3s;
+}
+
+@keyframes lighter {
+  0%, 40% { filter: brightness(20%); }
+  100% { filter: brightness(50%); }
 }
 
 @layer base {
