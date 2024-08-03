@@ -15,6 +15,7 @@ const Bigger = ({children}) => {
     elementRef.current.forEach((element) => {
       gsap.to(element, {
         scale: 1,
+        filter: "blur(0px)",
         translateY: 0,
         opacity: 1,
         duration: 2,
@@ -24,7 +25,7 @@ const Bigger = ({children}) => {
           start: "top bottom",
           end: "bottom 80%",
           scrub: true,
-          markers: true, // Remove or set to false when not debugging
+          markers: false, // Remove or set to false when not debugging
         },
       });
     });
@@ -34,7 +35,7 @@ const Bigger = ({children}) => {
     // <div className="h-[3000px] flex items-center justify-center relative overflow-hidden">
       <div
         ref={(el) => (elementRef.current[0] = el)}
-        className="scale-90 opacity-0 translate-y-10"
+        className="scale-90 opacity-0 translate-y-10 blur-[10px]"
       >
         {children}
       </div>

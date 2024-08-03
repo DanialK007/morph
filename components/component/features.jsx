@@ -22,9 +22,9 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 export function Features() {
   return (
-    <section className="w-full text-secondary pb-12">
+    <section className="w-full text-secondary pb-12 overflow-hidden">
       {/* part 1 */}
-      <div className="container grid max-w-7xl mx-auto items-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-12 pb-12">
+      <div className="container flex flex-col-reverse lg:grid max-w-7xl mx-auto items-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-12 pb-12">
         <div className="flex flex-col items-start justify-center space-y-4">
           <Lefter>
             <div className="space-y-2">
@@ -94,12 +94,12 @@ export function Features() {
             // width="550"
             // height="550"
             alt="Mockup"
-            className="mx-auto aspect-square overflow-hidden rounded-xl sm:w-full p-5 h-[450px]"
+            className="mx-auto aspect-square overflow-hidden rounded-xl sm:w-full scale-125 lg:scale-100 lg:p-5 h-[250px] lg:h-[450px]"
           />
         </div>
       </div>
       {/* part 2 */}
-      <div className="container grid max-w-7xl mx-auto items-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-12 pb-12 mt-12">
+      <div className="container flex flex-col lg:grid max-w-7xl mx-auto items-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-12 pb-12 mt-12">
         <div className="relative">
           <div className="absolute inset-0 z-[-1] h-full w-full rounded-xl bg-muted/40 blur-xl" />
           <img
@@ -107,7 +107,7 @@ export function Features() {
             // width="550"
             // height="550"
             alt="Mockup"
-            className="mx-auto aspect-square overflow-hidden rounded-xl sm:w-full p-5 h-[450px]"
+            className="mx-auto aspect-square overflow-hidden rounded-xl sm:w-full scale-125 lg:scale-100 lg:p-5 h-[250px] lg:h-[450px]"
           />
         </div>
         <div className="flex flex-col items-start justify-center space-y-4">
@@ -174,7 +174,7 @@ export function Features() {
         </div>
       </div>
       {/* part 3 */}
-      <div className="container grid max-w-7xl mx-auto items-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-12 pb-12 mt-12">
+      <div className="container flex flex-col-reverse lg:grid max-w-7xl mx-auto items-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-12 pb-12 mt-12">
         <div className="flex flex-col items-start justify-center space-y-4">
           <Lefter>
             <div className="space-y-2">
@@ -242,7 +242,7 @@ export function Features() {
             // width="550"
             // height="550"
             alt="Mockup"
-            className="mx-auto aspect-square overflow-hidden rounded-xl sm:w-full p-5 h-[450px]"
+            className="mx-auto aspect-square overflow-hidden rounded-xl sm:w-full scale-125 lg:scale-100 lg:p-5 h-[250px] lg:h-[450px]"
           />
         </div>
       </div>

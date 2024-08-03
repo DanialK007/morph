@@ -15,6 +15,7 @@ const Righter = ({children}) => {
     elementRef.current.forEach((element) => {
       gsap.to(element, {
         translateX: 0,
+        filter: "blur(0px)",
         opacity: 1,
         duration: 2,
         ease: "power1.out",
@@ -23,7 +24,7 @@ const Righter = ({children}) => {
           start: "top bottom",
           end: "bottom 80%",
           scrub: true,
-          markers: true, // Remove or set to false when not debugging
+          markers: false, // Remove or set to false when not debugging
         },
       });
     });
@@ -33,7 +34,7 @@ const Righter = ({children}) => {
     // <div className="h-[3000px] flex items-center justify-center relative overflow-hidden">
       <div
         ref={(el) => (elementRef.current[0] = el)}
-        className="opacity-0 translate-x-10"
+        className="opacity-0 translate-x-10 blur-[10px]"
       >
         {children}
       </div>

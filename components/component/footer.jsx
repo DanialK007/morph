@@ -3,7 +3,7 @@ import React from 'react';
 export default function Footer() {
   return (
     <footer
-      className="text-center lg:text-left">
+      className="">
       {/* <div
         className="flex items-center justify-center border-b-2 bord p-6 dark:bord lg:justify-between">
         <div className="mr-12 hidden lg:block">
@@ -77,12 +77,12 @@ export default function Footer() {
       </div> */}
 
       {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
-      <div className="mx-6 py-14 text-center md:text-left">
+      <div className="mx-6 py-14">
         <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* <!-- TW Elements section --> */}
           <div className="">
             <h6
-              className="mb-4 text-primary flex items-center justify-center font-semibold md:justify-start">
+              className="mb-4 text-primary flex items-center font-semibold md:justify-start">
               <img alt="" src="logo2.png" className="size-10 me-2 object-cover rounded-[40px] duration-300 bg-primary p-1"/>
               <div className="">
                 <div className="">Morph</div>
@@ -98,7 +98,7 @@ export default function Footer() {
           {/* <!-- Products section --> */}
           <div className="">
             <h6
-              className="mb-4 text-primary flex justify-center font-semibold uppercase md:justify-start">
+              className="mb-4 text-primary flex font-semibold uppercase md:justify-start">
               Products
             </h6>
             <p className="mb-2">
@@ -121,7 +121,7 @@ export default function Footer() {
           {/* <!-- Useful links section --> */}
           <div className="">
             <h6
-              className="mb-4 text-primary flex justify-center font-semibold uppercase md:justify-start">
+              className="mb-4 text-primary flex font-semibold uppercase md:justify-start">
               Useful links
             </h6>
             <p className="mb-2">
@@ -144,10 +144,10 @@ export default function Footer() {
           {/* <!-- Contact section --> */}
           <div>
             <h6
-              className="mb-4 text-primary flex justify-center font-semibold uppercase md:justify-start">
+              className="mb-4 text-primary flex font-semibold uppercase md:justify-start">
               Contact
             </h6>
-            <p className="mb-2 flex items-center justify-center md:justify-start">
+            <p className="mb-2 flex items-center md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -160,7 +160,7 @@ export default function Footer() {
               </svg>
               99th Street, Mandalay, Myanmar
             </p>
-            <p className="mb-2 flex items-center justify-center md:justify-start">
+            <p className="mb-2 flex items-center md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -173,7 +173,7 @@ export default function Footer() {
               </svg>
               morph@example.com
             </p>
-            <p className="mb-2 flex items-center justify-center md:justify-start">
+            <p className="mb-2 flex items-center md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -186,7 +186,7 @@ export default function Footer() {
               </svg>
               + 959 234 567 889
             </p>
-            <p className="flex items-center justify-center md:justify-start">
+            <p className="flex items-center md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
