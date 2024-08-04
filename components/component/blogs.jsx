@@ -4,7 +4,7 @@ import Bigger from "./Bigger";
 function Blogs({ array, number }) {
   return (
     <div className="pt-20">
-      <section className="w-full pb-12 md:pb-24 bg-primary-foreground text-secondary">
+      <section className="w-full pb-12 md:pb-24 text-secondary">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -49,7 +49,6 @@ function Blogs({ array, number }) {
                 </div>
               </Bigger>
             ))}
-            ;
           </div>
         </div>
       </section>

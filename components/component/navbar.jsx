@@ -170,7 +170,7 @@ export default function MyNavbar() {
       <NavbarContent>
         <NavbarItem>
           <Link
-            className="bg-primary px-3 py-[8px] rounded-md text-xs font-semibold uppercase text-primary-foreground"
+            className="bg-primary hover:bg-secondary duration-300 px-3 py-[8px] rounded-md text-xs font-semibold uppercase text-primary-foreground"
             href="#"
           >
             Let's talk

@@ -35,8 +35,8 @@ export function Features() {
                 Powerful Features for Your Business
               </h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl lg:text-base xl:text-lg">
-                Discover the innovative features that will transform your business
-                and drive success.
+                Discover the innovative features that will transform your
+                business and drive success.
               </p>
             </div>
           </Lefter>
