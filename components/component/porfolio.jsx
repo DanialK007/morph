@@ -4,7 +4,7 @@ import Bigger from './Bigger'
 function Portfolio({array, number}) {
   return (
     <section className="w-full py-12 md:pb-24 bg-primary-foreground text-secondary">
-        <div className="container px-4 md:px-6">
+        <div className="px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               {/* <div className="inline-block rounded-lg bg-primary text-primary-foreground px-3 py-1 text-sm">Our Services</div> */}

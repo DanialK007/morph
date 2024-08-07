@@ -112,7 +112,7 @@ export function MainPage() {
         </div>
       </section>
       <section id="gallery" className="pb-12 md:pb-24">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="px-4 md:px-6">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl py-2 text-secondary">
               Our Gallery
@@ -122,7 +122,7 @@ export function MainPage() {
               thrive in the digital age.
             </p>
           </div>
-          <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="max-w-7xl mx-auto mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <Bigger>
               <div className="relative overflow-hidden rounded-lg bg-secondary shadow-lg transition-all h-[300px] group">
                 <img

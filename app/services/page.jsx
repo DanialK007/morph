@@ -5,7 +5,12 @@ import Footer from "@/components/component/footer";
 import { MainPage } from "@/components/component/main-page";
 import MyNavbar from "@/components/component/navbar";
 import Portfolio from "@/components/component/porfolio";
-import { portfolio } from "@/public/data";
+import { FaCheckCircle } from "react-icons/fa";
+import {
+  businessRegistrationServices,
+  portfolio,
+  websiteTypes,
+} from "@/public/data";
 import { BriefcaseIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,84 +29,73 @@ export default function Home() {
                 Our Services
               </h1>
               <p className="max-w-[600px] opacity-80 md:text-xl">
-                Our digital marketing agency specializes in crafting tailored
-                strategies to help your business thrive in the digital
-                landscape.
+              Morph - Digital Marketing တွင် ရရှိနိုင်သော Service များ
               </p>
             </div>
           </div>
         </div>
       </section>
       <div className="min-h-screen pt-10">
-        <div className="grid max-w-7xl mx-auto lg:grid-cols-2 pt-20 p-5 gap-10">
-          <div className="h-full rounded-[20px]">
+        <div className="grid max-w-7xl mx-auto lg:grid-cols- 2 pt-20 p-5 gap-10">
+          {/* <div className="h-full rounded-[20px]">
             <img src="/features.svg" alt="" className="h-full" />
-          </div>
+          </div> */}
           <div className="h-full flex flex-col gap-5 justify-center">
-            <div className="text-3xl lg:text-5xl font-semibold">
-              Website Development
+            <div className="text-xl lg:text-3xl font-semibold">
+              Website အမျိုးအစားများနှင့် Morph တွင် ရရှိနိုင်သော Website
+              Development Service များ
             </div>
             <div className="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-              ex eveniet quas harum quos perferendis ad amet. Consectetur,
-              eveniet earum eaque eligendi maxime eos qui, porro nemo asperiores
-              facilis veniam.
+              ဝဘ်ဆိုက်တွင် မိမိဖော်ပြလိုသည့် ရည်ရွယ်ချက်၊
+              လုပ်ဆောင်နိုင်စွမ်းနှင့် အကြောင်းအရာများပေါ် မူတည်ပြီး
+              ဝဘ်ဆိုက်များကို အမျိုးအစားအလိုက် ရေးဆွဲပေးပါတယ်ရှင်။
             </div>
-            <div className="grid grid-cols-3 gap-4 pb-8">
+            {websiteTypes.map((web, index) => (
               <Bigger>
-                <div className="p-5 border-2 border-primary rounded-lg text-primary flex flex-col text-center justify-center items-center">
-                  <BriefcaseIcon className="h-6 w-6" />
-                  <div className="">Qualified Market</div>
-                  <div className="">
-                    Lorem ipsum, dolor sit amet conse ctetur adipisicing elit.
+                <div className="py-8">
+                  <div className="grid lg:grid-cols-3">
+                    <div className="flex justify-center">
+                      <img
+                        src={web.img}
+                        alt=""
+                        className="h-56 aspect-[5/3] object-cover object-top"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-center lg:col-span-2 p-5">
+                      <div className="text-3xl">{web.type}</div>
+                      <div className="">{web.description}</div>
+                    </div>
                   </div>
                 </div>
               </Bigger>
-              <Bigger>
-                <div className="p-5 border-2 border-primary rounded-lg text-primary flex flex-col text-center justify-center items-center">
-                  <BriefcaseIcon className="h-6 w-6" />
-                  <div className="">Qualified Market</div>
-                  <div className="">
-                    Lorem ipsum, dolor sit amet conse ctetur adipisicing elit.
-                  </div>
-                </div>
-              </Bigger>
-              <Bigger>
-                <div className="p-5 border-2 border-primary rounded-lg text-primary flex flex-col text-center justify-center items-center">
-                  <BriefcaseIcon className="h-6 w-6" />
-                  <div className="">Qualified Market</div>
-                  <div className="">
-                    Lorem ipsum, dolor sit amet conse ctetur adipisicing elit.
-                  </div>
-                </div>
-              </Bigger>
-              <Bigger>
-                <div className="p-5 border-2 border-primary rounded-lg text-primary flex flex-col text-center justify-center items-center">
-                  <BriefcaseIcon className="h-6 w-6" />
-                  <div className="">Qualified Market</div>
-                  <div className="">
-                    Lorem ipsum, dolor sit amet conse ctetur adipisicing elit.
-                  </div>
-                </div>
-              </Bigger>
-              <Bigger>
-                <div className="p-5 border-2 border-primary rounded-lg text-primary flex flex-col text-center justify-center items-center">
-                  <BriefcaseIcon className="h-6 w-6" />
-                  <div className="">Qualified Market</div>
-                  <div className="">
-                    Lorem ipsum, dolor sit amet conse ctetur adipisicing elit.
-                  </div>
-                </div>
-              </Bigger>
-              <Bigger>
-                <div className="p-5 border-2 border-primary rounded-lg text-primary flex flex-col text-center justify-center items-center">
-                  <BriefcaseIcon className="h-6 w-6" />
-                  <div className="">Qualified Market</div>
-                  <div className="">
-                    Lorem ipsum, dolor sit amet conse ctetur adipisicing elit.
-                  </div>
-                </div>
-              </Bigger>
+            ))}
+          </div>
+        </div>
+        <div className="grid max-w-7xl mx-auto lg:grid-cols- 2 pt-20 p-5 gap-10">
+          {/* <div className="h-full rounded-[20px]">
+            <img src="/features.svg" alt="" className="h-full" />
+          </div> */}
+          <div className="grid lg:grid -cols-2">
+            {/* <div className=""></div> */}
+            <div className="">
+              <div className="text-xl lg:text-3xl font-semibold pb-4">
+                Morph တွင် ရရှိနိုင်သော Business Registration Service များ
+              </div>
+              <div className="pb-5">
+                ဝဘ်ဆိုက်တွင် မိမိဖော်ပြလိုသည့် ရည်ရွယ်ချက်၊
+                လုပ်ဆောင်နိုင်စွမ်းနှင့် အကြောင်းအရာများပေါ် မူတည်ပြီး
+                ဝဘ်ဆိုက်များကို အမျိုးအစားအလိုက် ရေးဆွဲပေးပါတယ်ရှင်။
+              </div>
+              <div className="grid grid-cols-4 gap-y-5">
+                {businessRegistrationServices.map((busniess, index) => (
+                  <Bigger>
+                      <div className="flex flex-col justify-center lg:col-span-2 p-5">
+                        <div className="text-2xl pb-1">{busniess.service}</div>
+                        <div className="flex items-center gap-5"><FaCheckCircle className="text-primary hidden" /> {busniess.description}</div>
+                      </div>
+                  </Bigger>
+                ))}
+              </div>
             </div>
           </div>
         </div>

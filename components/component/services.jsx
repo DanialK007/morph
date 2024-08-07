@@ -9,7 +9,7 @@ function Services({ array }) {
       id="services"
       className="w-full py-12 md:py-24 bg-primary-foreground text-secondary"
     >
-      <div className="container px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             {/* <div className="inline-block rounded-lg bg-primary text-primary-foreground px-3 py-1 text-sm">Our Services</div> */}
@@ -22,7 +22,7 @@ function Services({ array }) {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-6xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+        <div className="mx-auto grid max-w-6xl gap-6 py-12 lg:grid-cols-3 lg:gap-12">
           {array.map((service, index) => (
             <Bigger>
               <div
