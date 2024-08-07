@@ -29,14 +29,15 @@ export default function Home() {
                 Our Services
               </h1>
               <p className="max-w-[600px] opacity-80 md:text-xl">
-              Morph - Digital Marketing တွင် ရရှိနိုင်သော Service များ
+                Morph - Digital Marketing တွင် ရရှိနိုင်သော Service များ
               </p>
             </div>
           </div>
         </div>
       </section>
       <div className="min-h-screen pt-10">
-        <div className="grid max-w-7xl mx-auto lg:grid-cols- 2 pt-20 p-5 gap-10">
+        <div className="grid relative max-w-7xl mx-auto lg:grid-cols- 2 pt-20 p-5 gap-10">
+          <div id="web" className="absolute -top-10"></div>
           {/* <div className="h-full rounded-[20px]">
             <img src="/features.svg" alt="" className="h-full" />
           </div> */}
@@ -71,12 +72,15 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="grid max-w-7xl mx-auto lg:grid-cols- 2 pt-20 p-5 gap-10">
+        <div className="grid relative max-w-7xl mx-auto lg:grid-cols- 2 pt-20 p-5 gap-10">
+          <div id="business" className="absolute -top-10"></div>
           {/* <div className="h-full rounded-[20px]">
             <img src="/features.svg" alt="" className="h-full" />
           </div> */}
-          <div className="grid lg:grid -cols-2">
-            {/* <div className=""></div> */}
+          <div className="grid lg:grid-cols-2 gap-10">
+            <div className="">
+              <div className="sticky top-64 left-0 w-full bg-primary h-[350px]"></div>
+            </div>
             <div className="">
               <div className="text-xl lg:text-3xl font-semibold pb-4">
                 Morph တွင် ရရှိနိုင်သော Business Registration Service များ
@@ -86,20 +90,24 @@ export default function Home() {
                 လုပ်ဆောင်နိုင်စွမ်းနှင့် အကြောင်းအရာများပေါ် မူတည်ပြီး
                 ဝဘ်ဆိုက်များကို အမျိုးအစားအလိုက် ရေးဆွဲပေးပါတယ်ရှင်။
               </div>
-              <div className="grid grid-cols-4 gap-y-5">
+              <div className="grid grid-cols- 4 gap-y-5">
                 {businessRegistrationServices.map((busniess, index) => (
                   <Bigger>
-                      <div className="flex flex-col justify-center lg:col-span-2 p-5">
-                        <div className="text-2xl pb-1">{busniess.service}</div>
-                        <div className="flex items-center gap-5"><FaCheckCircle className="text-primary hidden" /> {busniess.description}</div>
-                      </div>
+                    {/* <div className="flex flex-col justify-center lg:col-span-2 p-5">
+                        <div className="text-2xl pb-1">{busniess.service}</div> */}
+                    <div className="flex items-center gap-5">
+                      <FaCheckCircle className="text-primary" />{" "}
+                      {busniess.description}
+                    </div>
+                    {/* </div> */}
                   </Bigger>
                 ))}
               </div>
             </div>
           </div>
         </div>
-        <div className="grid max-w-7xl mx-auto lg:grid-cols-2 pt-20 p-5 gap-10">
+        <div className="grid relative max-w-7xl mx-auto lg:grid-cols-2 pt-20 p-5 gap-10">
+        <div id="digital" className="absolute -top-10"></div>
           <div className="h-full flex flex-col gap-5 justify-center">
             <div className="text-3xl lg:text-5xl font-semibold">
               Digital Marketing

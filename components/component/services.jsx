@@ -2,6 +2,7 @@ import React from "react";
 // import { Button } from '../ui/button'
 import { FaCircleInfo } from "react-icons/fa6";
 import Bigger from "./Bigger";
+import Link from "next/link";
 
 function Services({ array }) {
   return (
@@ -47,12 +48,12 @@ function Services({ array }) {
                   <div className="leading-4 text-sm h-0 overflow-hidden group-hover:h-12 group-hover:pb-2 duration-500 ease-out opacity-0 group-hover:opacity-100">
                     {service.description}
                   </div>
-                  <a
-                    href="#"
+                  <Link
+                    href={service.url}
                     className="bg-primary hover:bg-primary/80 duration-300 text-xs px-3 leading-6 w-fit rounded-[30px] uppercase"
                   >
                     View services
-                  </a>
+                  </Link>
                 </div>
               </div>
             </Bigger>
