@@ -26,7 +26,7 @@ export default function Home() {
           <div className="">
             <div className="flex flex-col items-center justify-center space-y-4">
               <h1 className="text-3xl py-2 font-semibold sm:text-5xl xl:text-7xl/none">
-                Web Development Services
+                Digital Marketing Services
               </h1>
               <p className="max-w-[600px] opacity-80 md:text-xl">
                 Morph - Digital Marketing တွင် ရရှိနိုင်သော Website Service များ
@@ -43,33 +43,30 @@ export default function Home() {
           </div> */}
           <div className="h-full flex flex-col gap-5 justify-center">
             <div className="text-xl lg:text-3xl font-semibold">
-              Website အမျိုးအစားများနှင့် Morph တွင် ရရှိနိုင်သော Website
-              Development Service များ
+              Morph တွင် ရရှိနိုင်သော Business Registration Service များ
             </div>
             <div className="">
               ဝဘ်ဆိုက်တွင် မိမိဖော်ပြလိုသည့် ရည်ရွယ်ချက်၊
               လုပ်ဆောင်နိုင်စွမ်းနှင့် အကြောင်းအရာများပေါ် မူတည်ပြီး
               ဝဘ်ဆိုက်များကို အမျိုးအစားအလိုက် ရေးဆွဲပေးပါတယ်ရှင်။
             </div>
-            {websiteTypes.map((web, index) => (
-              <Bigger>
-                <div className="py-8">
-                  <div className="grid lg:grid-cols-3">
-                    <div className="flex justify-center">
+            <div className="grid grid-cols-4 gap-5">
+              {websiteTypes.map((web, index) => (
+                <Bigger>
+                  <div className="py-8">
                       <img
                         src={web.img}
                         alt=""
-                        className="h-56 aspect-[5/3] object-cover object-top"
+                        className="h-56 w-full object-cover object-top"
                       />
-                    </div>
-                    <div className="flex flex-col justify-center lg:col-span-2 p-5">
+                    <div className="flex flex-col justify-center py-5">
                       <div className="text-3xl">{web.type}</div>
                       <div className="">{web.description}</div>
                     </div>
                   </div>
-                </div>
-              </Bigger>
-            ))}
+                </Bigger>
+              ))}
+            </div>
           </div>
         </div>
       </div>

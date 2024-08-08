@@ -178,94 +178,177 @@ const websiteTypes = [
   },
 ];
 
+// const businessRegistrationServices = [
+//   {
+//     service: "Company Formation and Registration",
+//     description: "Company ဖွဲ့စည်းတည်ထောင်ခြင်းနှင့် မှတ်ပုံတင်လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "Annual Report Submission",
+//     description: "နှစ်စဉ်အစီရင်ခံစာ တင်ပေးခြင်း"
+//   },
+//   {
+//     service: "Company Extract Form Issuance",
+//     description: "Company Extract Form ထုတ်ပေးခြင်း"
+//   },
+//   {
+//     service: "SME Member Card Application",
+//     description: "အသေးစားနှင့် အလတ်စားစီးပွားရေးလုပ်ငန်း မှတ်ပုံတင်လက်မှတ်လျှောက်ပေးခြင်း (SME Member Card)"
+//   },
+//   {
+//     service: "Online Sales Registration",
+//     description: "Online Sales မှတ်ပုံတင်လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "TradeNet Membership Application",
+//     description: "TradeNet အသင်းဝင်လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "Import/Export Business Registration",
+//     description: "ပို့ကုန် သွင်းကုန်လုပ်ငန်းရှင် မှတ်ပုံတင်လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "Import/Export License/Permit Application",
+//     description: "ပို့ကုန်သွင်းကုန် လိုင်စင်/ ပါမစ်လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "Business License Application",
+//     description: "လုပ်ငန်းလိုင်စင်လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "Taxpayer Registration",
+//     description: "အခွန်ထမ်းမှတ်ပုံတင်လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "Tax Return Filing",
+//     description: "အခွန်ကြေညာလွှာတင်သွင်းပေးခြင်း"
+//   },
+//   {
+//     service: "Trademark and Service Mark Application",
+//     description: "ကုန်အမှတ်တံဆိပ် မူပိုင်ခွင့်၊ ဝန်ဆောင်မှုတံဆိပ် မူပိုင်ခွင့် လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "Patent Application",
+//     description: "တီထွင်မှု မူပိုင်ခွင့် (သို့) အသေးစားတီထွင်မှု မူပိုင်ခွင့် လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "Industrial Design Patent Application",
+//     description: "စက်မှုဒီဇိုင်း မူပိုင်ခွင့်လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "Copyright Application for Literature and Arts",
+//     description: "စာပေနှင့် အနုပညာမူပိုင်ခွင့်လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "FDA Application",
+//     description: "FDA လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "Myanmar Passport Online Booking",
+//     description: "မြန်မာနိုင်ငံကူး လက်မှတ် (Passport) Online Booking လျှောက်ပေးခြင်း"
+//   },
+//   {
+//     service: "Driving License Renewal Appointment Booking",
+//     description: "ယဉ်မောင်းလိုင်စင် သက်တမ်းတိုးရက်ချိန်းယူပေးခြင်း"
+//   },
+//   {
+//     service: "Traffic Rules Training Course Booking",
+//     description: "ယဉ်စည်းကမ်း၊ လမ်းစည်းကမ်း သင်တန်း ရက်ချိန်းယူပေးခြင်း"
+//   },
+//   {
+//     service: "Vehicle Registration Verification Appointment",
+//     description: "မော်တော်ယဉ် မှတ်ပုံတင်ထားခြင်း ရှိ၊ မရှိ စစ်ဆေးရန်အတွက် ရက်ချိန်းယူပေးခြင်း"
+//   },
+//   {
+//     service: "Vehicle Alteration Appointment",
+//     description: "မော်တော်ယဉ် အခြားအပြောင်းအလဲအတွက် ရက်ချိန်းယူပေးခြင်း"
+//   },
+//   {
+//     service: "Vehicle Inbound/Outbound Appointment",
+//     description: "မော်တော်ယဉ် နယ်ဝင်/ နယ်ထွက် ရက်ချိန်းယူပေးခြင်း"
+//   }
+// ];
+
 const businessRegistrationServices = [
   {
-    service: "Company Formation and Registration",
-    description: "Company ဖွဲ့စည်းတည်ထောင်ခြင်းနှင့် မှတ်ပုံတင်လျှောက်ပေးခြင်း"
+    category: "Company ဖွဲ့စည်းတည်ထောင်ခြင်းနှင့် မှတ်ပုံတင်ခြင်း",
+    img: "https://online.york.ac.uk/wp-content/uploads/2022/07/Group-of-people-around-a-low-table-with-business-documents-laid-out-1030x579.jpg",
+    services: [
+      "Company ဖွဲ့စည်းတည်ထောင်ခြင်းနှင့် မှတ်ပုံတင်လျှောက်ပေးခြင်း",
+      "နှစ်စဉ်အစီရင်ခံစာ တင်ပေးခြင်း",
+      "Company Extract Form ထုတ်ပေးခြင်း"
+    ]
   },
   {
-    service: "Annual Report Submission",
-    description: "နှစ်စဉ်အစီရင်ခံစာ တင်ပေးခြင်း"
+    category: "SME Member Card လျှောက်ပေးခြင်း",
+    img: "https://online.york.ac.uk/wp-content/uploads/2022/07/Group-of-people-around-a-low-table-with-business-documents-laid-out-1030x579.jpg",
+    services: [
+      "အသေးစားနှင့် အလတ်စားစီးပွားရေးလုပ်ငန်း မှတ်ပုံတင်လက်မှတ်လျှောက်ပေးခြင်း (SME Member Card)"
+    ]
   },
   {
-    service: "Company Extract Form Issuance",
-    description: "Company Extract Form ထုတ်ပေးခြင်း"
+    category: "Online Sales မှတ်ပုံတင်လျှောက်ပေးခြင်း",
+    img: "https://online.york.ac.uk/wp-content/uploads/2022/07/Group-of-people-around-a-low-table-with-business-documents-laid-out-1030x579.jpg",
+    services: [
+      "အွန်လိုင်းရောင်းအားလုပ်ငန်းလက်မှတ်လျှောက်လွှာလက်ခံခြင်း"
+    ]  },
+  {
+    category: "ပို့ကုန်သွင်းကုန် လိုင်စင်/ ပါမစ်လျှောက်ပေးခြင်း",
+    img: "https://online.york.ac.uk/wp-content/uploads/2022/07/Group-of-people-around-a-low-table-with-business-documents-laid-out-1030x579.jpg",
+    services: [
+      "TradeNet အသင်းဝင်လျှောက်ပေးခြင်း",
+      "ပို့ကုန် သွင်းကုန်လုပ်ငန်းရှင် မှတ်ပုံတင်လျှောက်ပေးခြင်း",
+      "ပို့ကုန်သွင်းကုန် လိုင်စင်/ ပါမစ်လျှောက်ပေးခြင်း"
+    ]
   },
   {
-    service: "SME Member Card Application",
-    description: "အသေးစားနှင့် အလတ်စားစီးပွားရေးလုပ်ငန်း မှတ်ပုံတင်လက်မှတ်လျှောက်ပေးခြင်း (SME Member Card)"
+    category: "လုပ်ငန်းလိုင်စင်လျှောက်ပေးခြင်း",
+    img: "https://online.york.ac.uk/wp-content/uploads/2022/07/Group-of-people-around-a-low-table-with-business-documents-laid-out-1030x579.jpg",
+    services: [
+      "လုပ်ငန်းလိုင်စင်ရရှိရန်လျှောက်လွှာအကူအညီပေးခြင်း"
+    ]  },
+  {
+    category: "အခွန်ကိစ္စဆောင်ရွက်ပေးခြင်း",
+    img: "https://online.york.ac.uk/wp-content/uploads/2022/07/Group-of-people-around-a-low-table-with-business-documents-laid-out-1030x579.jpg",
+    services: [
+      "အခွန်ထမ်းမှတ်ပုံတင်လျှောက်ပေးခြင်း",
+      "အခွန်ကြေညာလွှာတင်သွင်းပေးခြင်း"
+    ]
   },
   {
-    service: "Online Sales Registration",
-    description: "Online Sales မှတ်ပုံတင်လျှောက်ပေးခြင်း"
+    category: "မူပိုင်ခွင့်လျှောက်ပေးခြင်း",
+    img: "https://online.york.ac.uk/wp-content/uploads/2022/07/Group-of-people-around-a-low-table-with-business-documents-laid-out-1030x579.jpg",
+    services: [
+      "ကုန်အမှတ်တံဆိပ် မူပိုင်ခွင့်၊ ဝန်ဆောင်မှုတံဆိပ် မူပိုင်ခွင့် လျှောက်ပေးခြင်း",
+      "တီထွင်မှု မူပိုင်ခွင့် (သို့) အသေးစားတီထွင်မှု မူပိုင်ခွင့် လျှောက်ပေးခြင်း",
+      "စက်မှုဒီဇိုင်း မူပိုင်ခွင့်လျှောက်ပေးခြင်း",
+      "စာပေနှင့် အနုပညာမူပိုင်ခွင့်လျှောက်ပေးခြင်း"
+    ]
   },
   {
-    service: "TradeNet Membership Application",
-    description: "TradeNet အသင်းဝင်လျှောက်ပေးခြင်း"
+    category: "FDA လျှောက်ပေးခြင်း",
+    img: "https://online.york.ac.uk/wp-content/uploads/2022/07/Group-of-people-around-a-low-table-with-business-documents-laid-out-1030x579.jpg",
+    services: [
+      "FDA လိုင်စင်ရရန်လျှောက်လွှာလက်ခံခြင်း"
+    ]
   },
   {
-    service: "Import/Export Business Registration",
-    description: "ပို့ကုန် သွင်းကုန်လုပ်ငန်းရှင် မှတ်ပုံတင်လျှောက်ပေးခြင်း"
+    category: "မြန်မာနိုင်ငံကူး လက်မှတ် (Passport) Online Booking လျှောက်ပေးခြင်း",
+    img: "https://online.york.ac.uk/wp-content/uploads/2022/07/Group-of-people-around-a-low-table-with-business-documents-laid-out-1030x579.jpg",
+    services: [
+      "မြန်မာနိုင်ငံကူးလက်မှတ် အွန်လိုင်းကြိုတင်မှာကြားခြင်း"
+    ]
   },
   {
-    service: "Import/Export License/Permit Application",
-    description: "ပို့ကုန်သွင်းကုန် လိုင်စင်/ ပါမစ်လျှောက်ပေးခြင်း"
-  },
-  {
-    service: "Business License Application",
-    description: "လုပ်ငန်းလိုင်စင်လျှောက်ပေးခြင်း"
-  },
-  {
-    service: "Taxpayer Registration",
-    description: "အခွန်ထမ်းမှတ်ပုံတင်လျှောက်ပေးခြင်း"
-  },
-  {
-    service: "Tax Return Filing",
-    description: "အခွန်ကြေညာလွှာတင်သွင်းပေးခြင်း"
-  },
-  {
-    service: "Trademark and Service Mark Application",
-    description: "ကုန်အမှတ်တံဆိပ် မူပိုင်ခွင့်၊ ဝန်ဆောင်မှုတံဆိပ် မူပိုင်ခွင့် လျှောက်ပေးခြင်း"
-  },
-  {
-    service: "Patent Application",
-    description: "တီထွင်မှု မူပိုင်ခွင့် (သို့) အသေးစားတီထွင်မှု မူပိုင်ခွင့် လျှောက်ပေးခြင်း"
-  },
-  {
-    service: "Industrial Design Patent Application",
-    description: "စက်မှုဒီဇိုင်း မူပိုင်ခွင့်လျှောက်ပေးခြင်း"
-  },
-  {
-    service: "Copyright Application for Literature and Arts",
-    description: "စာပေနှင့် အနုပညာမူပိုင်ခွင့်လျှောက်ပေးခြင်း"
-  },
-  {
-    service: "FDA Application",
-    description: "FDA လျှောက်ပေးခြင်း"
-  },
-  {
-    service: "Myanmar Passport Online Booking",
-    description: "မြန်မာနိုင်ငံကူး လက်မှတ် (Passport) Online Booking လျှောက်ပေးခြင်း"
-  },
-  {
-    service: "Driving License Renewal Appointment Booking",
-    description: "ယဉ်မောင်းလိုင်စင် သက်တမ်းတိုးရက်ချိန်းယူပေးခြင်း"
-  },
-  {
-    service: "Traffic Rules Training Course Booking",
-    description: "ယဉ်စည်းကမ်း၊ လမ်းစည်းကမ်း သင်တန်း ရက်ချိန်းယူပေးခြင်း"
-  },
-  {
-    service: "Vehicle Registration Verification Appointment",
-    description: "မော်တော်ယဉ် မှတ်ပုံတင်ထားခြင်း ရှိ၊ မရှိ စစ်ဆေးရန်အတွက် ရက်ချိန်းယူပေးခြင်း"
-  },
-  {
-    service: "Vehicle Alteration Appointment",
-    description: "မော်တော်ယဉ် အခြားအပြောင်းအလဲအတွက် ရက်ချိန်းယူပေးခြင်း"
-  },
-  {
-    service: "Vehicle Inbound/Outbound Appointment",
-    description: "မော်တော်ယဉ် နယ်ဝင်/ နယ်ထွက် ရက်ချိန်းယူပေးခြင်း"
+    category: "ယဉ်မောင်းလိုင်စင်နှင့် မော်တော်ယဉ်မှတ်ပုံတင်ပေးခြင်း",
+    img: "https://online.york.ac.uk/wp-content/uploads/2022/07/Group-of-people-around-a-low-table-with-business-documents-laid-out-1030x579.jpg",
+    services: [
+      "ယဉ်မောင်းလိုင်စင် သက်တမ်းတိုးရက်ချိန်းယူပေးခြင်း",
+      "ယဉ်စည်းကမ်း၊ လမ်းစည်းကမ်း သင်တန်း ရက်ချိန်းယူပေးခြင်း",
+      "မော်တော်ယဉ် မှတ်ပုံတင်ထားခြင်း ရှိ၊ မရှိ စစ်ဆေးရန်အတွက် ရက်ချိန်းယူပေးခြင်း",
+      "မော်တော်ယဉ် အခြားအပြောင်းအလဲအတွက် ရက်ချိန်းယူပေးခြင်း",
+      "မော်တော်ယဉ် နယ်ဝင်/ နယ်ထွက် ရက်ချိန်းယူပေးခြင်း"
+    ]
   }
 ];
 
