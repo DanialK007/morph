@@ -1,36 +1,42 @@
+// app/blog/[id]/page.jsx
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation"; // Correct import for app directory
+import { useParams } from "next/navigation"; // Import useParams
 import axios from "axios";
-import Blogs from "@/components/component/blogs";
-import { FAQ } from "@/components/component/faq";
-import Footer from "@/components/component/footer";
 import MyNavbar from "@/components/component/navbar";
-import { portfolio } from "@/public/data";
-import Link from "next/link";
+import Footer from "@/components/component/footer";
 
-export default function Home() {
-  const [blogs, setBlogs] = useState([]);
+const BlogDetail = () => {
+  const router = useRouter();
+  const { id } = useParams(); // Get the id from the useParams hook
+  const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchBlogs() {
+    if (!id) return; // Ensure that id is available before making the request
+
+    const fetchBlog = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/blogs");
-        setBlogs(response.data);
+        const response = await axios.get(
+          `http://localhost:5000/api/blogs/${id}`
+        );
+        setBlog(response.data);
       } catch (err) {
-        setError("Failed to load blogs");
+        setError("Failed to load blog");
       } finally {
         setLoading(false);
       }
-    }
+    };
 
-    fetchBlogs();
-  }, []);
+    fetchBlog();
+  }, [id]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
+
   return (
     <>
       <MyNavbar />
@@ -51,9 +57,23 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Blogs array={blogs} />
-      <FAQ />
+      <div className="max-w-2xl min-h-screen mx-auto my-8">
+        {blog ? (
+          <>
+            <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
+            <p className="text-neutral-600 mb-2 whitespace-pre-wrap">{blog.content}</p>
+            <p className="text-neutral-500 text-sm">By {blog.author}</p>
+            <p className="text-neutral-500 text-sm">
+              {new Date(blog.createdAt).toLocaleDateString()}
+            </p>
+          </>
+        ) : (
+          <div>No blog found</div>
+        )}
+      </div>
       <Footer />
     </>
   );
-}
+};
+
+export default BlogDetail;

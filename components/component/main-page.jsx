@@ -1,12 +1,8 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import axios from "axios";
 import Link from "next/link";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { BsFacebook, BsGlobe } from "react-icons/bs";
-import { FaCircleInfo, FaRegCreditCard } from "react-icons/fa6";
-import { FaPhotoVideo } from "react-icons/fa";
-import { IoQrCodeOutline } from "react-icons/io5";
-import { MdLibraryBooks } from "react-icons/md";
-import { BsBuildingFillCheck } from "react-icons/bs";
-import { HiBuildingStorefront } from "react-icons/hi2";
 import { FAQ } from "./faq";
 import Portfolio from "./porfolio";
 import { portfolio, services } from "@/public/data";
@@ -15,8 +11,40 @@ import Services from "./services";
 import Bigger from "./Bigger";
 import Blogs from "./blogs";
 import Lefter from "./Lefter";
+import Gallery from "./gallery";
 
 export function MainPage() {
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchBlogs() {
+      try {
+        const response = await axios.get("http://localhost:5000/api/blogs");
+        setBlogs(response.data);
+      } catch (err) {
+        setError("Failed to load blogs");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchBlogs();
+  }, []);
+
+  if (loading)
+    return (
+      <div className="loading fixed w-full h-full top-0 left-0 bg-primary flex items-center justify-center">
+        <img
+          alt=""
+          src="logo.png"
+          className="loadingIcon size-56 me-2 object-cover rounded-[40px] duration-300 bg-primary p-1"
+        />
+      </div>
+    );
+  if (error) return <div>{error}</div>;
+
   return (
     <div className="flex flex-col min-h-[100dvh] text-primary-foreground">
       <section className="w-full h-screen flex items-center justify-center relative pt-20">
@@ -111,238 +139,8 @@ export function MainPage() {
           </div>
         </div>
       </section>
-      <section id="gallery" className="pb-12 md:pb-24">
-        <div className="px-4 md:px-6">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl py-2 text-secondary">
-              Our Gallery
-            </h2>
-            <p className="text-secondary/60 text-lg">
-              Our digital marketing services are designed to help your business
-              thrive in the digital age.
-            </p>
-          </div>
-          <div className="max-w-7xl mx-auto mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <Bigger>
-              <div className="relative overflow-hidden rounded-lg bg-secondary shadow-lg transition-all h-[300px] group">
-                <img
-                  src="https://i0.wp.com/picjumbo.com/wp-content/uploads/business-man-team-leader-boss-speaking-at-company-team-meeting-free-photo.jpg?w=600&quality=80"
-                  width={600}
-                  height={400}
-                  alt="Project 1"
-                  className="h-full w-full object-cover object-center group-hover:scale-105 duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#150f04] to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-lg font-bold font-montserrat">
-                    Project 1
-                  </h3>
-                  <p className="mt-2 text-base font-roboto">
-                    A brief description of the project.
-                  </p>
-                  <div className="mt-4 flex gap-2">
-                    <Link
-                      href="#"
-                      className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary"
-                      prefetch={false}
-                    >
-                      View Project
-                    </Link>
-                    <Link
-                      href="#"
-                      className="rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
-                      prefetch={false}
-                    >
-                      GitHub
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Bigger>
-            <Bigger>
-              <div className="relative overflow-hidden rounded-lg bg-secondary shadow-lg transition-all h-[300px] group">
-                <img
-                  src="https://i0.wp.com/picjumbo.com/wp-content/uploads/business-man-team-leader-boss-speaking-at-company-team-meeting-free-photo.jpg?w=600&quality=80"
-                  width={600}
-                  height={400}
-                  alt="Project 2"
-                  className="h-full w-full object-cover object-center group-hover:scale-105 duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#150f04] to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-lg font-bold font-montserrat">
-                    Project 2
-                  </h3>
-                  <p className="mt-2 text-base font-roboto">
-                    A brief description of the project.
-                  </p>
-                  <div className="mt-4 flex gap-2">
-                    <Link
-                      href="#"
-                      className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary"
-                      prefetch={false}
-                    >
-                      View Project
-                    </Link>
-                    <Link
-                      href="#"
-                      className="rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
-                      prefetch={false}
-                    >
-                      GitHub
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Bigger>
-            <Bigger>
-              <div className="relative overflow-hidden rounded-lg bg-secondary shadow-lg transition-all h-[300px] group">
-                <img
-                  src="https://i0.wp.com/picjumbo.com/wp-content/uploads/business-man-team-leader-boss-speaking-at-company-team-meeting-free-photo.jpg?w=600&quality=80"
-                  width={600}
-                  height={400}
-                  alt="Project 3"
-                  className="h-full w-full object-cover object-center group-hover:scale-105 duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#150f04] to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-lg font-bold font-montserrat">
-                    Project 3
-                  </h3>
-                  <p className="mt-2 text-base font-roboto">
-                    A brief description of the project.
-                  </p>
-                  <div className="mt-4 flex gap-2">
-                    <Link
-                      href="#"
-                      className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary"
-                      prefetch={false}
-                    >
-                      View Project
-                    </Link>
-                    <Link
-                      href="#"
-                      className="rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
-                      prefetch={false}
-                    >
-                      GitHub
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Bigger>
-            <Bigger>
-              <div className="relative overflow-hidden rounded-lg bg-secondary shadow-lg transition-all h-[300px] group">
-                <img
-                  src="https://i0.wp.com/picjumbo.com/wp-content/uploads/business-man-team-leader-boss-speaking-at-company-team-meeting-free-photo.jpg?w=600&quality=80"
-                  width={600}
-                  height={400}
-                  alt="Project 1"
-                  className="h-full w-full object-cover object-center group-hover:scale-105 duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#150f04] to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-lg font-bold font-montserrat">
-                    Project 1
-                  </h3>
-                  <p className="mt-2 text-base font-roboto">
-                    A brief description of the project.
-                  </p>
-                  <div className="mt-4 flex gap-2">
-                    <Link
-                      href="#"
-                      className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary"
-                      prefetch={false}
-                    >
-                      View Project
-                    </Link>
-                    <Link
-                      href="#"
-                      className="rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
-                      prefetch={false}
-                    >
-                      GitHub
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Bigger>
-            <Bigger>
-              <div className="relative overflow-hidden rounded-lg bg-secondary shadow-lg transition-all h-[300px] group">
-                <img
-                  src="https://i0.wp.com/picjumbo.com/wp-content/uploads/business-man-team-leader-boss-speaking-at-company-team-meeting-free-photo.jpg?w=600&quality=80"
-                  width={600}
-                  height={400}
-                  alt="Project 2"
-                  className="h-full w-full object-cover object-center group-hover:scale-105 duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#150f04] to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-lg font-bold font-montserrat">
-                    Project 2
-                  </h3>
-                  <p className="mt-2 text-base font-roboto">
-                    A brief description of the project.
-                  </p>
-                  <div className="mt-4 flex gap-2">
-                    <Link
-                      href="#"
-                      className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary"
-                      prefetch={false}
-                    >
-                      View Project
-                    </Link>
-                    <Link
-                      href="#"
-                      className="rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
-                      prefetch={false}
-                    >
-                      GitHub
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Bigger>
-            <Bigger>
-              <div className="relative overflow-hidden rounded-lg bg-secondary shadow-lg transition-all h-[300px] group">
-                <img
-                  src="https://i0.wp.com/picjumbo.com/wp-content/uploads/business-man-team-leader-boss-speaking-at-company-team-meeting-free-photo.jpg?w=600&quality=80"
-                  width={600}
-                  height={400}
-                  alt="Project 3"
-                  className="h-full w-full object-cover object-center group-hover:scale-105 duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#150f04] to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-lg font-bold font-montserrat">
-                    Project 3
-                  </h3>
-                  <p className="mt-2 text-base font-roboto">
-                    A brief description of the project.
-                  </p>
-                  <div className="mt-4 flex gap-2">
-                    <Link
-                      href="#"
-                      className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary"
-                      prefetch={false}
-                    >
-                      View Project
-                    </Link>
-                    <Link
-                      href="#"
-                      className="rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
-                      prefetch={false}
-                    >
-                      GitHub
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Bigger>
-          </div>
-        </div>
-      </section>
-      <Blogs array={portfolio} number={3}/>
+      <Gallery />
+      <Blogs array={blogs} number={3} />
       <FAQ />
       <section id="contact" className="relative py-24 overflow-hidden">
         <div className="absolute top-0 left-0 -z-10 blur-sm scale-105 w-full h-full bg-[url(https://aofund.org/app/uploads/2021/01/people-coffee-tea-meeting-1024x576.jpg)] bg-cover brightness-50"></div>

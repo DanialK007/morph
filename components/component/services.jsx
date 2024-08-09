@@ -23,7 +23,7 @@ function Services({ array }) {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-6xl gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+        <div className="mx-auto grid max-w-7xl gap-6 py-12 lg:grid-cols-3 lg:gap-10">
           {array.map((service, index) => (
             <Bigger>
               <div

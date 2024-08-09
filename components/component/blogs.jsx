@@ -1,5 +1,6 @@
 import React from "react";
 import Bigger from "./Bigger";
+import Link from "next/link";
 
 function Blogs({ array, number }) {
   return (
@@ -18,10 +19,10 @@ function Blogs({ array, number }) {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-8xl lg:px-10 items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+          <div className="mx-auto grid max-w-8xl lg:px-10 items-start gap-6 py-12 lg:grid-cols-3 lg:gap-8">
             {array.slice(0, number).map((item, index) => (
               <Bigger>
-                <div className="shadow-md rounded-lg border border-primary/10 overflow-hidden h-full hover:scale-105 duration-300 cursor-pointer hover:shadow-xl">
+                <div className="shadow -md rounded -lg border-0 bor der-primary/10 overflow-hidden h-full hover:scale -105 shadow-none duration-300 hover:sha dow-xl">
                   <div className="relative">
                     {/* <BsGlobe className="h-8 w-8 text-primary" />   */}
                     <img
@@ -34,17 +35,16 @@ function Blogs({ array, number }) {
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-xl font-bold">Marketing Power</h3>
+                    <h3 className="text-xl font-bold">{item.title}</h3>
                     <p className="opacity-60 pt-2">
-                      Optimize your website to rank higher in search engine
-                      results and drive more organic traffic.
+                      {item.content.substring(0, 100)}...
                     </p>
-                    <a
-                      href="#"
-                      className="pt-2 text-sm block w-fit ms-auto font-semibold"
+                    <Link
+                      href={`/blog/${item._id}`}
+                      className="pt-2 text-sm block w-fit ms-a uto font-semibold"
                     >
                       Read More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </Bigger>

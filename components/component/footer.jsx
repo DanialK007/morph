@@ -79,9 +79,9 @@ export default function Footer() {
 
       {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
       <div className="mx-6 py-14">
-        <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-10">
           {/* <!-- TW Elements section --> */}
-          <div className="">
+          <div className="lg:col-span-2 lg:ps-10">
             <h6
               className="mb-4 text-primary flex items-center font-semibold md:justify-start">
               <img alt="" src="logo2.png" className="size-10 me-2 object-cover rounded-[40px] duration-300 bg-primary p-1"/>
@@ -97,7 +97,7 @@ export default function Footer() {
             </p>
           </div>
           {/* <!-- Products section --> */}
-          <div className="">
+          <div className="lg:col-span-2 lg:ps-10">
             <h6
               className="mb-4 text-primary flex font-semibold uppercase md:justify-start">
               Quick Links
@@ -120,30 +120,30 @@ export default function Footer() {
             </p>
           </div>
           {/* <!-- Useful links section --> */}
-          <div className="">
+          <div className="lg:col-span-2">
             <h6
               className="mb-4 text-primary flex font-semibold uppercase md:justify-start">
               Social links
             </h6>
             <p className="mb-2">
-              <a href='' className="te"
+              <a target='_blank' href='https://www.facebook.com/morphwebsiteanddigitalmarketing?mibextid=LQQJ4d' className="hover:text-primary hover:underline"
               >Facebook</a>
             </p>
+            <p className='mb-2'>
+              <a target='_blank' href='https://www.linkedin.com/company/morphwebsiteanddigitalmarketing/' className="hover:text-primary hover:underline"
+              >LinkedIn</a>
+            </p>
             <p className="mb-2">
-              <a href='' className="te"
+              <a target='_blank' href='https://t.me/websitemyanmar' className="hover:text-primary hover:underline"
               >Telegram</a>
             </p>
             <p className="mb-2">
-              <a href='' className="te"
+              <a target='_blank' href='https://invite.viber.com/?g2=AQAgAG9pwjGLolMltWVlDjneT1ei5C0j6vSIc0NBjm%2FTxaO4nZQM1jJVi3jBPHmy' className="hover:text-primary hover:underline"
               >Viber</a>
-            </p>
-            <p>
-              <a href='' className="te"
-              >WhatsApp</a>
             </p>
           </div>
           {/* <!-- Contact section --> */}
-          <div>
+          <div className='lg:col-span-3 lg:ps-10'>
             <h6
               className="mb-4 text-primary flex font-semibold uppercase md:justify-start">
               Contact
@@ -161,7 +161,7 @@ export default function Footer() {
               </svg>
               99th Street, Mandalay, Myanmar
             </p>
-            <p className="mb-2 flex items-center md:justify-start">
+            <a href='mailto:morphwebsite.digitalmarketing@gmail.com' className="mb-2 flex items-center md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -172,9 +172,9 @@ export default function Footer() {
                 <path
                   d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
               </svg>
-              morph@example.com
-            </p>
-            <p className="mb-2 flex items-center md:justify-start">
+              morphwebsite.digitalmarketing@gmail.com
+            </a>
+            <a href='phone:+959786063014' className="mb-2 flex items-center md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -185,8 +185,8 @@ export default function Footer() {
                   d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
                   clipRule="evenodd" />
               </svg>
-              + 959 234 567 889
-            </p>
+              + 959 786 063 014
+            </a>
             <p className="flex items-center md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

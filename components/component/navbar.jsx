@@ -129,7 +129,7 @@ export default function MyNavbar() {
           >
             <img
               alt=""
-              src="logo.png"
+              src='https://i.imgur.com/crtpq5D.png'
               className={`h-14 w-16 pt-2 object-cover rounded-lg duration-300 ${
                 isScrolled ? "invert" : "invert-0"
               }`}

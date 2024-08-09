@@ -17,10 +17,10 @@ function Portfolio({array, number}) {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-8xl lg:px-10 items-start gap-6 py-12 lg:grid-cols-4 lg:gap-10">
+          <div className="mx-auto grid max-w-8xl lg:px-10 items-start gap-6 py-12 lg:grid-cols-4 lg:gap-8">
             {array.slice(0, number).map((item, index) => (
               <Bigger>
-                <div className="shadow-md rounded-lg border border-primary/10 overflow-hidden h-full hover:scale-105 duration-300 cursor-pointer hover:shadow-xl">
+                <div className="shadow-sm rounded-lg border border-primary/10 overflow-hidden h-full hover:scale-[1.02] duration-300 cursor-pointer hover:shadow-xl">
                   <div className="relative">
                     {/* <BsGlobe className="h-8 w-8 text-primary" />   */}
                     <img
