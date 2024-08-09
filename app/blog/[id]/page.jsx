@@ -21,7 +21,7 @@ const BlogDetail = () => {
     const fetchBlog = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/blogs/${id}`
+          `https://morph-api-4f2u.onrender.com/api/blogs/${id}`
         );
         setBlog(response.data);
       } catch (err) {
@@ -61,7 +61,9 @@ const BlogDetail = () => {
         {blog ? (
           <>
             <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
-            <p className="text-neutral-600 mb-2 whitespace-pre-wrap">{blog.content}</p>
+            <p className="text-neutral-600 mb-2 whitespace-pre-wrap">
+              {blog.content}
+            </p>
             <p className="text-neutral-500 text-sm">By {blog.author}</p>
             <p className="text-neutral-500 text-sm">
               {new Date(blog.createdAt).toLocaleDateString()}

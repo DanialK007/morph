@@ -12,7 +12,10 @@ const BlogForm = ({ addBlog }) => {
     const newBlog = { title, content, author };
 
     try {
-      const res = await axios.post("http://localhost:5000/api/blogs", newBlog);
+      const res = await axios.post(
+        "https://morph-api-4f2u.onrender.com/api/blogs",
+        newBlog
+      );
       addBlog(res.data); // Add new blog to the list
       setTitle("");
       setContent("");

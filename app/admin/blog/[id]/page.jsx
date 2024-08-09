@@ -1,5 +1,5 @@
 // app/blog/[id]/page.jsx
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; // Correct import for app directory
@@ -18,7 +18,9 @@ const BlogDetail = () => {
 
     const fetchBlog = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/blogs/${id}`);
+        const response = await axios.get(
+          `https://morph-api-4f2u.onrender.com/api/blogs/${id}`
+        );
         setBlog(response.data);
       } catch (err) {
         setError("Failed to load blog");
@@ -38,7 +40,9 @@ const BlogDetail = () => {
       {blog ? (
         <>
           <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
-          <p className="text-neutral-600 mb-2 whitespace-pre-wrap leading-[1.5]">{blog.content}</p>
+          <p className="text-neutral-600 mb-2 whitespace-pre-wrap leading-[1.5]">
+            {blog.content}
+          </p>
           <p className="text-neutral-500 text-sm">By {blog.author}</p>
           <p className="text-neutral-500 text-sm">
             {new Date(blog.createdAt).toLocaleDateString()}

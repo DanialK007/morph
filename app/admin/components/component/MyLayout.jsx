@@ -129,7 +129,9 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/blogs");
+        const res = await axios.get(
+          "https://morph-api-4f2u.onrender.com/api/blogs"
+        );
         setBlogs(res.data);
       } catch (err) {
         setError("Connection Time out. Please try again later.");
@@ -150,25 +152,22 @@ const Dashboard = () => {
     <div className="flex flex-1 md:ps-16">
       <div className="p-2 md:p-10 rounded-tl-2xl flex flex-col gap-2 flex-1 w-full">
         <div className="flex gap-2">
-            <div
-              className="h-20 w-full rounded-lg bg-muted"
-            ></div>
-            <div
-              className="h-20 w-full rounded-lg bg-muted"
-            ></div>
-            <div
-              className="h-20 w-full rounded-lg bg-muted"
-            ></div>
-            <div
-              className="h-20 w-full rounded-lg bg-muted"
-            ></div>
+          <div className="h-20 w-full rounded-lg bg-muted"></div>
+          <div className="h-20 w-full rounded-lg bg-muted"></div>
+          <div className="h-20 w-full rounded-lg bg-muted"></div>
+          <div className="h-20 w-full rounded-lg bg-muted"></div>
         </div>
         <div className="grid lg:grid-cols-2 gap-2">
           <div className="w-full rounded-lg bg-muted border p-8 h-fit">
             <BlogForm addBlog={addBlog} />
           </div>
           <div className="h-full w-full rounded-lg bg-muted border p-8  ">
-            <BlogList blogs={blogs} setBlogs={setBlogs} loading={loading} error={error} />
+            <BlogList
+              blogs={blogs}
+              setBlogs={setBlogs}
+              loading={loading}
+              error={error}
+            />
           </div>
         </div>
       </div>

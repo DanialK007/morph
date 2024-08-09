@@ -20,7 +20,9 @@ const BlogList = ({ blogs, setBlogs, loading, error }) => {
   if (error)
     return (
       <div className="w-full h-full flex flex-col gap-4 items-center justify-center">
-        <div className="text-5xl border-2 size-16 flex items-center justify-center rounded-full">!</div>
+        <div className="text-5xl border-2 size-16 flex items-center justify-center rounded-full">
+          !
+        </div>
         {error}
       </div>
     );
@@ -33,7 +35,7 @@ const BlogList = ({ blogs, setBlogs, loading, error }) => {
   // Handle blog deletion
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/blogs/${id}`);
+      await axios.delete(`https://morph-api-4f2u.onrender.com/api/blogs/${id}`);
       setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog._id !== id));
     } catch (err) {
       console.error("Error deleting blog:", err);
@@ -52,7 +54,7 @@ const BlogList = ({ blogs, setBlogs, loading, error }) => {
   const handleEditSubmit = async (updatedBlog) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/blogs/${updatedBlog._id}`,
+        `https://morph-api-4f2u.onrender.com/api/blogs/${updatedBlog._id}`,
         updatedBlog
       );
       setBlogs((prevBlogs) =>

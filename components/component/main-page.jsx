@@ -21,7 +21,9 @@ export function MainPage() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
-        const response = await axios.get("http://localhost:5000/api/blogs");
+        const response = await axios.get(
+          "https://morph-api-4f2u.onrender.com/api/blogs"
+        );
         setBlogs(response.data);
       } catch (err) {
         setError("Failed to load blogs");
@@ -35,7 +37,7 @@ export function MainPage() {
 
   if (loading)
     return (
-      <div className="loading fixed w-full h-full top-0 left-0 bg-primary flex items-center justify-center">
+      <div className="loading fixed z-[9999] w-full h-full top-0 left-0 bg-primary flex items-center justify-center">
         <img
           alt=""
           src="logo.png"

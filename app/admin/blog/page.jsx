@@ -1,5 +1,5 @@
 // app/blog/page.js
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -13,7 +13,9 @@ export default function BlogPage() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
-        const response = await axios.get("http://localhost:5000/api/blogs");
+        const response = await axios.get(
+          "https://morph-api-4f2u.onrender.com/api/blogs"
+        );
         setBlogs(response.data);
       } catch (err) {
         setError("Failed to load blogs");
