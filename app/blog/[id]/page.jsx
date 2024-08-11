@@ -34,7 +34,16 @@ const BlogDetail = () => {
     fetchBlog();
   }, [id]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return (
+      <div className="loading fixed z-[9999] w-full h-full top-0 left-0 bg-primary flex items-center justify-center">
+        <img
+          alt=""
+          src="https://i.imgur.com/crtpq5D.png"
+          className="loadingIcon size-56 me-2 object-cover rounded-[40px] duration-300 bg-primary p-1"
+        />
+      </div>
+    );
   if (error) return <div>{error}</div>;
 
   return (
@@ -57,7 +66,7 @@ const BlogDetail = () => {
           </div>
         </div>
       </section>
-      <div className="max-w-2xl min-h-screen mx-auto my-8">
+      <div className="max-w-2xl min-h-screen mx-auto my-8 px-5">
         {blog ? (
           <>
             <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>

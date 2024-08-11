@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function Gallery() {
   return (
-    <section id="gallery" className="pb-12 md:pb-24">
+    <section id="gallery" className="pb-12 md:pb-24 text-primary-foreground">
         <div className="px-4 md:px-6">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl py-2 text-secondary">
@@ -136,7 +136,7 @@ function Gallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#150f04] to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <h3 className="text-lg font-bold font-montserrat">
-                    Project 1
+                    Project 4
                   </h3>
                   <p className="mt-2 text-base font-roboto">
                     A brief description of the project.
@@ -172,7 +172,7 @@ function Gallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#150f04] to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <h3 className="text-lg font-bold font-montserrat">
-                    Project 2
+                    Project 5
                   </h3>
                   <p className="mt-2 text-base font-roboto">
                     A brief description of the project.
@@ -199,7 +199,7 @@ function Gallery() {
             <Bigger>
               <div className="relative overflow-hidden bg-secondary shadow-lg transition-all h-[350px] group">
                 <img
-                  src="https://media.istockphoto.com/id/1448823265/photo/project-management-leadership-and-planning-with-business-people-in-meeting-for-marketing.jpg?s=612x612&w=0&k=20&c=gAx1-8EP60j5amMyvxaaltasfBR2PhZ2WHY_tBZuzmg="
+                  src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Benefits_of_Project_Management.jpg"
                   width={600}
                   height={400}
                   alt="Project 3"
@@ -208,7 +208,7 @@ function Gallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#150f04] to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <h3 className="text-lg font-bold font-montserrat">
-                    Project 3
+                    Project 6
                   </h3>
                   <p className="mt-2 text-base font-roboto">
                     A brief description of the project.

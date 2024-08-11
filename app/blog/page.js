@@ -31,8 +31,24 @@ export default function Home() {
     fetchBlogs();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+  if (loading)
+    return (
+      <div className="loading fixed z-[9999] w-full h-full top-0 left-0 bg-primary flex items-center justify-center">
+        <img
+          alt=""
+          src="https://i.imgur.com/crtpq5D.png"
+          className="loadingIcon size-56 me-2 object-cover rounded-[40px] duration-300 bg-primary p-1"
+        />
+      </div>
+    );
+  if (error)
+    return (
+      <div className="h-screen flex flex-col items-center justify-center gap-2">
+        <div className="size-20 border-4 text-5xl mb-5 border-secondary flex items-center justify-center rounded-[80px]">!</div>
+        <div className="text-5xl font-semibold">No Internet Connection</div>
+        <div className="text-xl">{error}</div>
+      </div>
+    );
   return (
     <>
       <MyNavbar />
