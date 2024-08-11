@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import { useInView } from "react-intersection-observer";
 import Footer from "@/components/component/footer";
 import { MainPage } from "@/components/component/main-page";
 import MyNavbar from "@/components/component/navbar";
@@ -22,6 +23,12 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Use Intersection Observer to load blogs only when the section is in view
+  const { ref: blogsRef, inView: blogsInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   useEffect(() => {
     async function fetchBlogs() {
       try {
@@ -36,27 +43,11 @@ export default function Home() {
       }
     }
 
-    fetchBlogs();
-  }, []);
-
-  if (loading)
-    return (
-      <div className="loading fixed z-[9999] w-full h-full top-0 left-0 bg-primary flex items-center justify-center">
-        <img
-          alt=""
-          src="https://i.imgur.com/crtpq5D.png"
-          className="loadingIcon size-56 me-2 object-cover rounded-[40px] duration-300 bg-primary p-1"
-        />
-      </div>
-    );
-  if (error)
-    return (
-      <div className="h-screen flex flex-col items-center justify-center gap-2">
-        <div className="size-20 border-4 text-5xl mb-5 border-secondary flex items-center justify-center rounded-[80px]">!</div>
-        <div className="text-5xl font-semibold">No Internet Connection</div>
-        <div className="text-xl">{error}</div>
-      </div>
-    );
+    // Fetch blogs only when they are in view
+    if (blogsInView) {
+      fetchBlogs();
+    }
+  }, [blogsInView]);
 
   return (
     <>
@@ -72,7 +63,7 @@ export default function Home() {
                 className="size-20 scale-150 mb-4 p-1 object-[50%] rounded-[5px] bg-primary"
               />
               <h1 className="text-3xl py-2 font-semibold sm:text-5xl xl:text-7xl/none">
-                Your Imigination, Our Creation
+                Your Imagination, Our Creation
               </h1>
               <p className="max-w-[600px] opacity-80 md:text-xl">
                 Our digital marketing agency specializes in crafting tailored
@@ -148,13 +139,42 @@ export default function Home() {
                 alt="About Me"
                 className="h-full w-full object-cover object-center group-hover:scale-105 duration-500"
               />
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-[#28293D] to-transparent" /> */}
             </div>
           </div>
         </div>
       </section>
       <Gallery />
-      <Blogs array={blogs} number={3} />
+      <section ref={blogsRef} className="min-h-[300px]">
+        {loading && blogs.length === 0 ? (
+          <div className="pt-20">
+            <section className="w-full pb-12 md:pb-24 text-secondary">
+              <div className="px-4 md:px-6">
+                <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                  <div className="space-y-2">
+                    {/* <div className="inline-block rounded-lg bg-primary text-primary-foreground px-3 py-1 text-sm">Our Services</div> */}
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl py-2">
+                      Our Blogs
+                    </h2>
+                    <p className="max-w-[900px] text-secondary/60 text-lg">
+                      Our digital marketing services are designed to help your
+                      business thrive in the digital age.
+                    </p>
+                  </div>
+                </div>
+                <div className="mx-auto grid max-w-8xl lg:px-10 items-start gap-6 py-12 lg:grid-cols-3 lg:gap-8">
+                  <div className="h-full shadow-xl animate-pulse min-h-[500px] rounded-lg"></div>
+                  <div className="h-full shadow-xl animate-pulse min-h-[500px] rounded-lg"></div>
+                  <div className="h-full shadow-xl animate-pulse min-h-[500px] rounded-lg"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        ) : error ? (
+          <div className="text-center text-red-500">{error}</div>
+        ) : (
+          <Blogs array={blogs} number={3} />
+        )}
+      </section>
       <FAQ />
       <section
         id="contact"
@@ -163,7 +183,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 -z-10 blur-sm scale-105 w-full h-full bg-[url(https://aofund.org/app/uploads/2021/01/people-coffee-tea-meeting-1024x576.jpg)] bg-cover brightness-50"></div>
         <div className="container max-w-7xl mx-auto flex flex-col gap-4 lg:gap-6 items-center text-center justify-center px-4">
           <div className="text-2xl lg:text-4xl font-semibold uppercase">
-            Ready to build your Imiginations?
+            Ready to build your Imaginations?
           </div>
           <a
             href="#"

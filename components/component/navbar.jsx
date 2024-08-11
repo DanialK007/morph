@@ -229,7 +229,7 @@ export default function MyNavbar() {
           </div>
         </div>
       </Navbar>
-      <div className="fixed bottom-10 right-10 size-14 rounded-[80px] flex items-center justify-center text-2xl bg-primary text-primary-foreground z-[99]">
+      <div className="fixed bottom-5 right-3 lg:bottom-16 lg:right-10 size-14 rounded-[80px] flex items-center justify-center text-2xl bg-primary text-primary-foreground z-[99]">
         <FaFacebookMessenger />
       </div>
     </>

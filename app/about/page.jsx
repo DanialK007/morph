@@ -27,12 +27,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="min-h-screen overflow-hidden px-6 text-secondary">
-        <div className="flex flex-col lg:grid max-w-7xl gap-10 mx-auto min-h-screen items-center w-full py-20 lg:grid-cols-2">
-          <div className="h-full">
-            <img alt="" src="/placeholder.svg" className="h-full" />
+      <div className="overflow-hidden px-6 text-secondary">
+        <div className="flex flex-col lg:grid max-w-7xl gap-10 mx-auto items-center w-full py-10 lg:py-14 lg:grid-cols-2">
+          <div className="">
+            <img alt="" src="/morph.jpg" className="w-full lg:h-[600px] aspect-square brightness-150" />
           </div>
-          <div className="py-10">
+          <div className="lg:py-10">
             <Righter>
               <div className="text-3xl lg:text-5xl font-semibold pb-2">
                 Who we are
@@ -62,9 +62,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="min-h-screen overflow-hidden px-6 text-secondary">
-        <div className="flex flex-col-reverse lg:grid max-w-7xl gap-10 mx-auto min-h-screen items-center w-full py-20 lg:grid-cols-2">
-          <div className="flex flex-col items-start justify-center space-y-4 py-10">
+      <div className="overflow-hidden px-6 text-secondary">
+        <div className="flex flex-col-reverse lg:grid max-w-7xl gap-10 mx-auto items-center w-full py-10 lg:py-14 lg:grid-cols-2">
+          <div className="flex flex-col items-start justify-center space-y-4 lg:py-10">
             <div className="space-y-2">
               <Lefter>
                 <div className="text-3xl lg:text-5xl font-semibold pb-2">
@@ -127,13 +127,13 @@ export default function Home() {
               </Lefter>
             </div>
           </div>
-          <div className="h-full">
-            <img alt="" src="/placeholder.svg" className="h-full" />
+          <div className="">
+            <img alt="" src="/services.png" className="w-full lg:h-[600px] aspect-square" />
           </div>
         </div>
       </div>
-      <div className="min-h-screen overflow-hidden px-6 text-secondary">
-        <div className="flex flex-col lg:grid max-w-7xl gap-10 mx-auto min-h-screen items-center w-full py-20 lg:grid-cols-2">
+      <div className="overflow-hidden px-6 text-secondary">
+        <div className="flex flex-col lg:grid max-w-7xl gap-10 mx-auto items-center w-full py-20 lg:grid-cols-2">
           <div className="h-full">
             <img alt="" src="/placeholder.svg" className="h-full" />
           </div>
