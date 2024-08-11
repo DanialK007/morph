@@ -22,7 +22,7 @@ export function MainPage() {
     async function fetchBlogs() {
       try {
         const response = await axios.get(
-          "https://morph-api-4f2u.onrender.com/api/blogs"
+          "https://morph-api-server.vercel.app/api/blogs"
         );
         setBlogs(response.data);
       } catch (err) {

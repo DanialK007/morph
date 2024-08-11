@@ -21,7 +21,7 @@ const BlogDetail = () => {
     const fetchBlog = async () => {
       try {
         const response = await axios.get(
-          `https://morph-api-4f2u.onrender.com/api/blogs/${id}`
+          `https://morph-api-server.vercel.app/api/blogs/${id}`
         );
         setBlog(response.data);
       } catch (err) {

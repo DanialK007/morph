@@ -130,7 +130,7 @@ const Dashboard = () => {
     const fetchBlogs = async () => {
       try {
         const res = await axios.get(
-          "https://morph-api-4f2u.onrender.com/api/blogs"
+          "https://morph-api-server.vercel.app/api/blogs"
         );
         setBlogs(res.data);
       } catch (err) {

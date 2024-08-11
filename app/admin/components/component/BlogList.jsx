@@ -35,7 +35,7 @@ const BlogList = ({ blogs, setBlogs, loading, error }) => {
   // Handle blog deletion
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://morph-api-4f2u.onrender.com/api/blogs/${id}`);
+      await axios.delete(`https://morph-api-server.vercel.app/api/blogs/${id}`);
       setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog._id !== id));
     } catch (err) {
       console.error("Error deleting blog:", err);
@@ -54,7 +54,7 @@ const BlogList = ({ blogs, setBlogs, loading, error }) => {
   const handleEditSubmit = async (updatedBlog) => {
     try {
       const response = await axios.put(
-        `https://morph-api-4f2u.onrender.com/api/blogs/${updatedBlog._id}`,
+        `https://morph-api-server.vercel.app/api/blogs/${updatedBlog._id}`,
         updatedBlog
       );
       setBlogs((prevBlogs) =>

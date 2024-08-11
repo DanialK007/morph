@@ -13,7 +13,7 @@ const BlogForm = ({ addBlog }) => {
 
     try {
       const res = await axios.post(
-        "https://morph-api-4f2u.onrender.com/api/blogs",
+        "https://morph-api-server.vercel.app/api/blogs",
         newBlog
       );
       addBlog(res.data); // Add new blog to the list
