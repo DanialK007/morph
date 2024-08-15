@@ -7,6 +7,7 @@ import Righter from "@/components/component/Righter";
 import { BriefcaseIcon } from "lucide-react";
 import { SiGmail } from "react-icons/si";
 import { FaFacebook, FaLinkedin, FaTelegram, FaTiktok, FaViber } from "react-icons/fa6";
+import MessageForm from "@/components/component/MessageForm";
 
 export default function Home() {
   return (
@@ -129,9 +130,9 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <div className="min-h-screen bg-muted"></div>
-      {/* <Features /> */}
-      {/* <FAQ /> */}
+      <div className="py-10 bg-muted">
+        <MessageForm />
+      </div>
       <Footer />
     </>
   );

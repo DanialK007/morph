@@ -1,5 +1,5 @@
 
-import BlogFetcher from "./BlogFetcher";
+// import BlogFetcher from "./BlogFetcher";
 
 export function MainPage() {
 

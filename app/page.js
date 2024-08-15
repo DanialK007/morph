@@ -162,9 +162,24 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mx-auto grid max-w-8xl lg:px-10 items-start gap-6 py-12 lg:grid-cols-3 lg:gap-8">
-                  <div className="h-full shadow-xl animate-pulse min-h-[500px] rounded-lg"></div>
-                  <div className="h-full shadow-xl animate-pulse min-h-[500px] rounded-lg"></div>
-                  <div className="h-full shadow-xl animate-pulse min-h-[500px] rounded-lg"></div>
+                  <div className="flex flex-col gap-4 shadow-xl animate-pulse p-5 rounded-lg">
+                    <div className="h-[300px] bg-primary rounded-lg"></div>
+                    <div className="h-5 bg-primary rounded-lg"></div>
+                    <div className="h-5 bg-primary rounded-lg"></div>
+                    <div className="h-5 w-1/2 bg-primary rounded-lg"></div>
+                  </div>
+                  <div className="flex flex-col gap-4 shadow-xl animate-pulse p-5 rounded-lg">
+                    <div className="h-[300px] bg-primary rounded-lg"></div>
+                    <div className="h-5 bg-primary rounded-lg"></div>
+                    <div className="h-5 bg-primary rounded-lg"></div>
+                    <div className="h-5 w-1/2 bg-primary rounded-lg"></div>
+                  </div>
+                  <div className="flex flex-col gap-4 shadow-xl animate-pulse p-5 rounded-lg">
+                    <div className="h-[300px] bg-primary rounded-lg"></div>
+                    <div className="h-5 bg-primary rounded-lg"></div>
+                    <div className="h-5 bg-primary rounded-lg"></div>
+                    <div className="h-5 w-1/2 bg-primary rounded-lg"></div>
+                  </div>
                 </div>
               </div>
             </section>
